@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1054278115600",
+    "firebase_url": "https://organ-donation-app-7b815-default-rtdb.firebaseio.com",
+    "project_id": "organ-donation-app-7b815",
+    "storage_bucket": "organ-donation-app-7b815.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054278115600:android:e429bd7f97cd22e2c40595",
+        "android_client_info": {
+          "package_name": "com.example.organdonationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054278115600-sfad5ffv1dbeh8n7n3h50njifd1vmrh0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.organdonationapp",
+            "certificate_hash": "71fe4065cb1716c156efaa312149e4794426824e"
+          }
+        },
+        {
+          "client_id": "1054278115600-suhvpmk247j70sa82q763dnecimqpuqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVFuVAV8WqfnMopinp6ckvrBcMsikSSB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054278115600-suhvpmk247j70sa82q763dnecimqpuqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

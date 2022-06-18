@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF5722"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".SelectRegistrationActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#fff"
+        android:baselineAligned="false"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+
+            android:orientation="vertical">
+
+
+            <ImageView
+
+                android:layout_width="263dp"
+                android:layout_height="144dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/transplant" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Hello,welcome to this application"
+                android:textColor="#000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="What best describes you?"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/Donorbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/buttons_background"
+                    android:text="Donor Registration"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/recipientbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttons_background"
+                    android:text="Recipient Registration"
+
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/BackButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="Already Registered? Sign in"
+                    android:textColor="#000"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

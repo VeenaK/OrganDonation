@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">OrganDonationApp</string>
+    <string-array name="organs">
+        <item>Select organ</item>
+        <item>Heart</item>
+        <item>Kidney</item>
+        <item>Pancreas</item>
+        <item>Liver</item>
+        <item>Lung</item>
+        <item>Bone</item>
+        <item>Intestine</item>
+        <item>Cornea</item>
+        <item>Heart valve</item>
+        <item>Small Intestine</item>
+        <item>Bone marrow</item>
+        <item>Pancreas transplantation</item>
+        <item>Eye</item>
+        <item>stomach</item>
+
+    </string-array>
+
+</resources>
