@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">OrganDonationApp</string>
+
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">close Navigation Drawer</string>
+
     <string-array name="organs">
         <item>Select organ</item>
         <item>Heart</item>
@@ -13,7 +17,6 @@
         <item>Heart valve</item>
         <item>Small Intestine</item>
         <item>Bone marrow</item>
-        <item>Pancreas transplantation</item>
         <item>Eye</item>
         <item>stomach</item>
 

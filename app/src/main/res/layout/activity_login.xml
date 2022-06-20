@@ -116,7 +116,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
-                    android:id="@+id/forgotpassword"
+                    android:id="@+id/ForgotPassword"
                     android:text="Forgot password"
                     android:textColor="#000"
                     android:gravity="end"
@@ -126,7 +126,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
-                    android:id="@+id/loginbutton"
+                    android:id="@+id/LoginButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -137,7 +137,7 @@
                     android:textColor="#fff"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/backbutton"
+                    android:id="@+id/BackButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"

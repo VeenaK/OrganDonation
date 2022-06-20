@@ -9,7 +9,11 @@
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable-v24/ic_mail.xml" value="0.1" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable-v24/ic_person.xml" value="0.1" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable-v24/ic_phone.xml" value="0.1" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable/header_background.xml" value="0.1" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable/ic_myfeed.xml" value="0.124" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable/navigation_selector.xml" value="0.124" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/drawable/navigation_view_item_selected.xml" value="0.1" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_donor_registration.xml" value="0.21428571428571427" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_login.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
@@ -17,6 +21,8 @@
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_screen_splash.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_select_registration.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/activity_top_animation.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/layout/header.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/vinay/AndroidStudioProjects/OrganDonationApp2/app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -152,8 +152,12 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                                 Toast.makeText(DonorRegistrationActivity.this, "Error" + error, Toast.LENGTH_SHORT).show();
                             } else {
                                 String currentUserId = mAuth.getCurrentUser().getUid();
-                                userDatabaseRef = FirebaseDatabase.getInstance().getReference()
-                                        .child("users").child(currentUserId);
+                                userDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserId);
+//                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+//                                DatabaseReference myRef = database.getReference("message");
+
+
+                                //myRef.setValue("email");
                                 HashMap<String, Object> userInfo = new HashMap<>();
                                 userInfo.put("id", currentUserId);
                                 userInfo.put("name", FullName);
@@ -163,6 +167,8 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                                 userInfo.put("organs", OrganSpinner);
                                 userInfo.put("type", "donor");
                                 userInfo.put("search", "donor" + OrganSpinner);
+
+
 
 
                                 userDatabaseRef.updateChildren(userInfo).addOnCompleteListener(new OnCompleteListener() {
@@ -177,73 +183,76 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                                         // loader.dismiss();
                                     }
                                 });
-                                if (resultUri != null) {
-                                    final StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile images").child(currentUserId);
-                                    Bitmap bitmap = null;
+//                                if (resultUri != null) {
+//                                    final StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile images").child(currentUserId);
+//                                    Bitmap bitmap = null;
+//
+//                                    try {
+//                                        bitmap = MediaStore.Images.Media.getBitmap(getApplication().getContentResolver(), resultUri);
+//                                    } catch (IOException e) {
+//                                        e.printStackTrace();
+//                                    }
+//                                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+//                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream);
+//                                    byte[] data = byteArrayOutputStream.toByteArray();
+//                                    UploadTask uploadTask = filePath.putBytes(data);
+//
+//                                    uploadTask.addOnFailureListener(new OnFailureListener() {
+//                                        @Override
+//                                        public void onFailure(@NonNull Exception e) {
+//                                            Toast.makeText(DonorRegistrationActivity.this, "image upload failed", Toast.LENGTH_SHORT).show();
+//                                        }
+//                                    });
+//                                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                                        @Override
+//                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                                            if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null) {
+//                                                Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+//                                                result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+//                                                    @Override
+//                                                    public void onSuccess(Uri uri) {
+//                                                        String imageUrl = uri.toString();
+//                                                        Map<String, Object> newImageMap = new HashMap<>();
+//                                                        newImageMap.put("profilepictureurl", imageUrl);
+//                                                        userDatabaseRef.updateChildren(newImageMap).addOnCompleteListener(new OnCompleteListener() {
+//                                                            @Override
+//                                                            public void onComplete(@NonNull Task task) {
+//                                                                if (task.isSuccessful()) {
+//                                                                    Toast.makeText(DonorRegistrationActivity.this, "Image url added to database successfully", Toast.LENGTH_SHORT).show();
+//                                                                } else {
+//                                                                    Toast.makeText(DonorRegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+//                                                                }
+//                                                            }
+//                                                    });
+//                                                        finish();
+//
+//                                                    }
+//                                                });
+//                                            }
+//
+//                                        }
+//                                    });
+//
+                                Intent intent = new Intent(DonorRegistrationActivity.this, MainActivity.class);
 
-                                    try {
-                                        bitmap = MediaStore.Images.Media.getBitmap(getApplication().getContentResolver(), resultUri);
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream);
-                                    byte[] data = byteArrayOutputStream.toByteArray();
-                                    UploadTask uploadTask = filePath.putBytes(data);
-
-                                    uploadTask.addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(DonorRegistrationActivity.this, "image upload failed", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                    uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                        @Override
-                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                            if (taskSnapshot.getMetadata() != null && taskSnapshot.getMetadata().getReference() != null) {
-                                                Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                                                result.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                                    @Override
-                                                    public void onSuccess(Uri uri) {
-                                                        String imageUrl = uri.toString();
-                                                        Map<String, Object> newImageMap = new HashMap<>();
-                                                        newImageMap.put("profilepictureurl", imageUrl);
-                                                        userDatabaseRef.updateChildren(newImageMap).addOnCompleteListener(new OnCompleteListener() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task task) {
-                                                                if (task.isSuccessful()) {
-                                                                    Toast.makeText(DonorRegistrationActivity.this, "Image url added to database successfully", Toast.LENGTH_SHORT).show();
-                                                                } else {
-                                                                    Toast.makeText(DonorRegistrationActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
-                                                                }
-                                                            }
-                                                        });
-                                                        finish();
-
-                                                    }
-                                                });
-                                            }
-
-                                        }
-                                    });
-                                    System.out.println("Done");
-                                    Intent intent = new Intent(DonorRegistrationActivity.this, loginActivity.class);
-                                    System.out.println("Done1");
-                                    startActivity(intent);
-                                    finish();
-                                    loader.dismiss();
-                                }
-
-                            }
+                                startActivity(intent);
+                                finish();
+                                loader.dismiss();
+//                            }
 
                         }
-                    });
+                    }
 
-                }
+
+                     });
+
+             }
 
             }
         });
-    }
+
+      }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode,@Nullable Intent data ) {

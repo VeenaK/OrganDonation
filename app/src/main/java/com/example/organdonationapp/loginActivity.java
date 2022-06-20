@@ -1,31 +1,118 @@
 package com.example.organdonationapp;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class loginActivity extends AppCompatActivity {
 
-    private TextView backbutton;
+    private TextView BackButton;
+    private TextInputEditText loginEmail, loginPassword;
+    //private TextInputEditText loginPassword;
+    private TextView ForgotPassword;
+    private Button LoginButton;
+    private ProgressDialog loader;
+    private FirebaseAuth mAuth;
+
+    private FirebaseAuth.AuthStateListener authStateListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mAuth = FirebaseAuth.getInstance();
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = mAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(loginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
 
-        backbutton=findViewById(R.id.backbutton);
 
-        backbutton.setOnClickListener(new View.OnClickListener() {
+        BackButton = findViewById(R.id.BackButton);
+        loginEmail = findViewById(R.id.loginEmail);
+        loginPassword = findViewById(R.id.loginPassword);
+        ForgotPassword = findViewById(R.id.ForgotPassword);
+        LoginButton = findViewById(R.id.LoginButton);
+
+        loader = new ProgressDialog(this);
+//        mAuth=FirebaseAuth.getInstance();
+
+
+        BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(loginActivity.this,SelectRegistrationActivity.class);
+                Intent intent = new Intent(loginActivity.this, SelectRegistrationActivity.class);
                 startActivity(intent);
             }
         });
+        LoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String email = loginEmail.getText().toString().trim();
+                final String password = loginPassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(email)) {
+                    loginEmail.setError("email is required");
+                }
+                if (TextUtils.isEmpty(email)) {
+                    loginEmail.setError("password is required");
+                } else {
+                    loader.setMessage("log in in progress");
+                    loader.setCanceledOnTouchOutside(false);
+                    loader.show();
+
+                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(loginActivity.this, "log in in successful", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(loginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(loginActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            }
+                            loader.dismiss();
+                        }
+
+                    });
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(authStateListener);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mAuth.removeAuthStateListener(authStateListener);
     }
 }

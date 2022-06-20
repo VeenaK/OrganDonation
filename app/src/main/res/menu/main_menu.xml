@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_myfeed"
+        android:title="Home"/>
+    <item
+        android:id="@+id/sentEmail"
+        android:icon="@drawable/ic_check"
+        android:title="Donors Email"/>
+    <item
+        android:id="@+id/compatible"
+        android:icon="@drawable/compatible"
+        android:title="Compatible"/>
+
+    <item android:title="organs">
+        <menu>
+            <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/Heart"
+                    android:icon="@drawable/heart"
+                    android:title="Heart"/>
+                <item
+                    android:id="@+id/Kidney"
+                    android:icon="@drawable/kidney"
+                    android:title="Kidney"/>
+                <item
+                    android:id="@+id/Pancreas"
+                    android:icon="@drawable/pancreas"
+                    android:title="Pancreas"/>
+                <item
+                    android:id="@+id/Liver"
+                    android:icon="@drawable/liver"
+                    android:title="Liver"/>
+                <item
+                    android:id="@+id/Lung"
+                    android:icon="@drawable/lung"
+                    android:title="Lung"/>
+                <item
+                    android:id="@+id/Bone"
+                    android:icon="@drawable/bone"
+                    android:title="Bone"/>
+                <item
+                    android:id="@+id/Intestine"
+                    android:icon="@drawable/intestine"
+                    android:title="Intestine"/>
+                <item
+                    android:id="@+id/Cornea"
+                    android:icon="@drawable/cornea"
+                    android:title="Cornea"/>
+                <item
+                    android:id="@+id/HeartValve"
+                    android:icon="@drawable/heartvalve"
+                    android:title="HeartValve"/>
+                <item
+                    android:id="@+id/SmallIntestine"
+                    android:icon="@drawable/smallintestine"
+                    android:title="SmallIntestine"/>
+                <item
+                    android:id="@+id/BoneMarrow"
+                    android:icon="@drawable/bonemarrow"
+                    android:title="BoneMarrow"/>
+                <item
+                    android:id="@+id/Eye"
+                    android:icon="@drawable/eye"
+                    android:title="Eye"/>
+                <item
+                    android:id="@+id/stomach"
+                    android:icon="@drawable/stomach"
+                    android:title="stomach"/>
+
+
+
+            </group>
+        </menu>
+
+    </item>
+
+
+    <item android:title="Actions">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/profile"
+                    android:icon="@drawable/ic_person"
+                    android:title="Profile"/>
+                <item
+                    android:id="@+id/notifications"
+                    android:icon="@drawable/ic_notifications"
+                    android:title="Notifications"/>
+                <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_logout"
+                    android:title="logout"/>
+
+
+
+            </group>
+        </menu>
+
+    </item>
+
+
+    <item android:title="Communicate">
+        <menu>
+<!--            <group android:checkableBehaviour="single">-->
+<!--                <item-->
+<!--                    android:id="@+id/About"-->
+<!--                    android:icon="@drawable/ic_about"-->
+<!--                    android:title="About"/>-->
+<!--                <item-->
+<!--                    android:id="@+id/share"-->
+<!--                    android:icon="@drawable/ic_share"-->
+<!--                    android:title="share"/>-->
+
+
+<!--            </group>-->
+        </menu>
+
+    </item>
+</menu>
